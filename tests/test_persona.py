@@ -1,5 +1,6 @@
 import unittest
 import datetime
+import numpy
 from persona import Persona
 
 
