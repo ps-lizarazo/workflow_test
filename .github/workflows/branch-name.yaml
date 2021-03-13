@@ -11,7 +11,7 @@ jobs:
       # extract branch name on pull request
       - name: Print branch name
         id: imprimir
-        if: github.event_name == 'pull_request'
+        if: startsWith(${GITHUB_HEAD_REF}, 'feature')
         run: echo "::set-output name=respuesta::${GITHUB_HEAD_REF}"
 
       # print branch name
