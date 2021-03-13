@@ -11,12 +11,9 @@ jobs:
       # extract branch name on pull request
       - name: Print branch name
         id: imprimir
-        if: startsWith( env.GITHUB_HEAD_REF, 'test')
+        if: startsWith( github.head_ref, 'feature')
         run: echo "::set-output name=respuesta::${GITHUB_HEAD_REF}"
-
-      # print branch name
-      - name: Get branch name
-        run: echo 'The branch name is' $BRANCH_NAME   
+        
   Mi-segundo-job:
     needs: which_branch
     name: Mi segundo job
