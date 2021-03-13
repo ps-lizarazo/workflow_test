@@ -1,5 +1,5 @@
 name: getBranchName
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   which_branch:
