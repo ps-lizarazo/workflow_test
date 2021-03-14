@@ -13,7 +13,11 @@ jobs:
         id: imprimir
         if: startsWith( github.head_ref, 'feature')
         run: echo "::set-output name=respuesta::${GITHUB_HEAD_REF}"
-        
+      
+      - name: Fail path
+        if: startsWith( github.head_ref, 'feature') == false
+        run: exit 1
+
   Mi-segundo-job:
     needs: which_branch
     name: Mi segundo job
